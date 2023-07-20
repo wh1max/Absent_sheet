@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Home Page</title>
+    <style>
+      /* CSS styles go here */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      
+      header {
+        background-color: #333;
+        color: white;
+        padding: 20px;
+        text-align: center;
+      }
+      
+      nav {
+        background-color: #f2f2f2;
+        padding: 10px;
+        text-align: center;
+      }
+      
+      nav a {
+        text-decoration: none;
+        color: #333;
+        padding: 10px;
+      }
+      
+      nav a:hover {
+        background-color: #333;
+        color: white;
+      }
+      
+      section {
+        padding: 20px;
+        text-align: center;
+      }
+      
+      footer {
+        background-color: #333;
+        color: white;
+        padding: 20px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Absent Sheet Project</h1>
+    </header>
+    
+    <nav>
+      <a href="notFound.html">Home</a>
+      <a class="active" href="{{ url_for("gfg")}}">QrCode maker</a>
+      <a href="notFound.html">About</a>
+      <a href="notFound.html">Contact</a>
+      
+    </nav>
+    
+    <section>
+      <h2>This is a Demo.</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla consectetur, mi sed mollis dapibus, nisl est bibendum nulla, vel interdum augue magna sit amet urna.</p>
+    </section>
+    
+    <footer>
+      <p>&copy; 2023 My Website. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
