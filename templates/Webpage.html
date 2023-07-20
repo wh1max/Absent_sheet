@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Registration Form</title>
+    <script>
+        function generateQRcode(value) {
+            let formData = new FormData();
+            formData.append('data', value);
+            fetch('`http://${location.hostname}:8080', {
+                method: 'POST',
+                body: formData
+            }).then((res) => {
+                res.body.getReader().read().then((img) => {
+                    let imageByteArray = img.value;
+                    let stringValue = String.fromCharCode(...imageByteArray);
+                    let encodedValue = bloa(stringValue);
+                    document.getElementById('qrcode').src = 'data:image/png;base64,${encodedValue}';
+
+                })
+
+            })
+        }
+    </script>
+</head>
+
+<body>
+    <link href="static/registration.css" type="text/css" rel="stylesheet" />
+    <h2>Sign Up</h2>
+    <form action="{{ url_for("gfg")}}" method="post" enctype="multipart/form-data">
+        <div class="container">
+            <div class="form_group">
+                <label>First Name:</label>
+                <input type="text" id="fname" name="qrcode" placeholder="Click Here" value=""
+                    onchange="generateQRcode(this.value)" required />
+            </div>
+            <div class="form_group">
+                <label>Last Name:</label>
+                <input type="text" id="zname" name="qrcode1" placeholder="Click Here" value=""
+                    onchange="generateQrcode(this.value)" required />
+            </div>
+            <div class="form_group">
+                <label>Group Number:</label>
+                <input type="text" id="mname" name="qrcode2" placeholder="Click Here" value=""
+                    onchange="generateQRcode(this.value)" required />
+            </div>
+
+            <div class="form_group">
+                <input type="submit" value="Submit">
+                <img id="qrcode">
+    </form>
+</body>
+
+</html>
