@@ -1,0 +1,8 @@
+opencv-python
+pdfkit
+sqlite3
+pandas
+flask
+flask_cors
+qrcode
+pyzbar
